@@ -9,7 +9,7 @@ Desenvolvidos com as tecnologias:
 
 # english version;
 
-# Individual project made by Pedro Trovo 2024/05/30;
+# Individual project made by Pedro Trovo 2024/05/01;
 Project aimed at health and well-being.
 Developed with technologies:
   HTML: For building the body of the page.
