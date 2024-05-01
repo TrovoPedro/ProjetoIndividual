@@ -1,4 +1,4 @@
-# Projeto Individual feito totalmente por Pedro Trovo 01/052024;
+# Projeto Individual feito totalmente por Pedro Trovo 01/05/2024;
 Projeto visando a saúde e bem estar.
 Desenvolvidos com as tecnologias:
   HTML: Para a construção do corpo da página.
