@@ -1,4 +1,4 @@
-# Projeto Individual feito totalmente por Pedro Trovo 01/05/2024;
+# Projeto Individual feito por Pedro Trovo 01/05/2024;
 Projeto visando a saúde e bem estar.
 Desenvolvidos com as tecnologias:
   HTML: Para a construção do corpo da página.
@@ -9,7 +9,7 @@ Desenvolvidos com as tecnologias:
 
 # english version;
 
-# Individual project made entirely by Pedro Trovo 2024/05/30;
+# Individual project made by Pedro Trovo 2024/05/30;
 Project aimed at health and well-being.
 Developed with technologies:
   HTML: For building the body of the page.
