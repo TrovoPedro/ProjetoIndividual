@@ -16,22 +16,30 @@ header{
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .nav-bar{
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row;;
+    justify-content: space-evenly;
+
 }
 
 ul{
     display: flex;
+    justify-content: space-evenly;
 }
 
 li{
     text-decoration: none;
     list-style: none;
+    margin-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #EEC900;
 }
 
 img{
