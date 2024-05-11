@@ -67,23 +67,120 @@ a:hover{
 section{
     width: 100vw;
     height: 100vh;
+    padding-top: 12%;
 }
 
 .sessao-inicio{
     display: flex;
     flex-direction: row;
-    background-image: url(/Site/img/bgSite.png);
+    background-image: url(../img/bgSite.png);
     background-size: cover;
 }
 
+.sessao-quemSomos{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerQuemSomos1{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-top: -164px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+p{
+    font-size: 20px;
+    margin-top: 55px;
+}
+
+.imgQuemSomos1{
+    width: 308px;
+    height: 154px;
+    margin-right: 90px;
+    margin-top: 35px;
+}
+
+.containerQuemSomos2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.containerImgQuemSomos{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    margin-top: 50px;
+}
+
+.iconeTec{
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    height: 590px;
+    margin-left: 60px;
+    margin-bottom: 90px;
+}
+
+.sessao-sobreMim{
+    background: #d1d4;
+}   
+
 .bola{
     position: absolute;
-    background: #fff;
+    background: #ffffffe5;
     width: 1000px;
     height: 1007px;
     right: 0;
     border-radius: 0px 0px 0px 500px ;
     margin-right: -300px;
     margin-top: -400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgBola1{
+    margin-top: 330px;
+    margin-right: 159px;
+}
+
+.imgBola2{
+    width: 590px;
+    margin-right: 195px;
+    margin-bottom: 155px;
+}
+
+.linksBola{
+    display: flex;
+    flex-direction: row;
+    margin-right: 159px;
+}
+
+.linkBola{
+    color: #FFC700;
+    background: #7D26CD;
+    margin-left: 10px;
+    border-radius:  5px 5px 5px 5px;
+    height: 45px;
+}
+
+.linkBola:hover{
+    color: #7D26CD;
+    background: #FFC700;
+}
+
+.liBola{
+    margin-top: 10px;
+}
+
+.sessao-rodape{
+    background: #d4d1;
+    height: 40px;
 }
 
