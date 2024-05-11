@@ -46,17 +46,16 @@ li{
     margin-left: 10px;
 }
 
-a {
+.links {
     text-decoration: none;
     color: #ffff;
     transition: 400ms;
     font-size: 16px;
 }
 
-a:hover{
+.links:hover{
     margin-top: -5px;
     border-bottom: 1px solid #68228B;
-
 }
 
 .logo{
@@ -128,8 +127,108 @@ p{
 }
 
 .sessao-sobreMim{
-    background: #d1d4;
+    background: #1a0230;
+    height: 1000px;
 }   
+
+.tituloImagem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tituloSobreMim{
+    color: #8700f5;
+    font-size: 50px;
+    margin-left: 45px;
+}
+
+.subtituloSobreMim{
+    color: #4313f1;
+    font-size: 50px;
+    margin-left: 45px;
+}
+
+.desenvolvedor{
+    color: #a09a9a;
+    margin-left: 45px;
+    font-size: 15px;
+}
+
+.botoesSobreMim{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 500px;
+    height: 45px;
+}
+
+.linkSobreMim2{
+    border: solid 1px #8700f5;
+    border-radius: 15px;
+    width: 160px;
+    text-align: center;
+}
+
+.liSobreMim{
+    margin-left: -136px;
+    margin-top: 3px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.linkSobreMim{
+    background-image: linear-gradient(to right, #5732db, #390c8f, #390c8f, #18054b, #18054b);
+    border: solid 1px #8700f5;
+    font-size: 30px;
+    border-radius: 15px;
+    width: 210px;
+    text-align: center;
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.imgBolaTrovo{
+    width: 30%;
+    margin-right: 70px;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.imgBolaTrovo:hover{
+    width: 35%;
+}
+
+.habilidadeDiv{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.habilidadeh1{
+    text-align: center;
+    margin-left: 610px;
+    color: #8700f5;
+}
+
+.textoSobreMim{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobreMimTexto{
+    color: #fff;
+    align-items: center;
+}
+
+p{
+    color: #a09a9a;
+}
 
 .bola{
     position: absolute;
@@ -168,6 +267,7 @@ p{
     margin-left: 10px;
     border-radius:  5px 5px 5px 5px;
     height: 45px;
+    transition: 500ms;
 }
 
 .linkBola:hover{
