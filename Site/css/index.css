@@ -24,6 +24,7 @@ header{
     display: flex;
     flex-direction: row;
     z-index: 1;
+    margin-top: -22px;
 }
 
 .nav-bar{
@@ -128,7 +129,7 @@ p{
 
 .sessao-sobreMim{
     background: #1a0230;
-    height: 1000px;
+    height: 1300px;
 }   
 
 .tituloImagem{
@@ -207,12 +208,70 @@ p{
     align-items: center;
     text-align: center;
     margin-top: 30px;
+    flex-direction: column;
 }
 
 .habilidadeh1{
     text-align: center;
-    margin-left: 610px;
     color: #8700f5;
+}
+
+.imgIcones{
+    margin-top: 30px;
+}
+
+.iconesHabilidades{
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    background: #120b2b;
+    margin-right: 15px;
+    margin-top: 100px;
+    border-bottom: #9413fd 2px solid;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px 0 0 0;
+    color: #9413fd;
+    transition: 500ms;
+    padding-top: 10px;
+}
+
+.card:hover{
+    background: #13083a;
+    margin-right: 15px;
+    margin-top: 100px;
+    border-bottom: #9413fd 2px solid;
+    width: 170px;
+    height: 170px;
+    border-radius: 30px 0 0 0;
+    color: #9413fd;
+}
+
+.card2{
+    background: #120b2b;
+    margin-right: 15px;
+    margin-top: 100px;
+    border-bottom: #9413fd 2px solid;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px 0 0 0;
+    color: #9413fd;
+    transition: 500ms;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.card2:hover{
+    background: #13034b;
+    margin-right: 15px;
+    margin-top: 100px;
+    border-bottom: #9413fd 2px solid;
+    width: 170px;
+    height: 170px;
+    border-radius: 30px 0 0 0;
+    color: #9413fd;
 }
 
 .textoSobreMim{
@@ -268,6 +327,7 @@ p{
     border-radius:  5px 5px 5px 5px;
     height: 45px;
     transition: 500ms;
+    text-decoration: none;
 }
 
 .linkBola:hover{
@@ -280,7 +340,27 @@ p{
 }
 
 .sessao-rodape{
-    background: #d4d1;
-    height: 40px;
+    background: rgb(250, 250, 250);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cardFooter{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 120px;
+    margin-left: 150px;
+}
+
+.subtituloFooter{
+    margin-top: 4px;
+}
+
+.tituloFooter{
+    color: #8060ca;
 }
 
