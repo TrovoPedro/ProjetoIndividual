@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #797575;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
