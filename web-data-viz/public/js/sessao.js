@@ -20,7 +20,7 @@ function limparSessao() {
 // carregamento (loading)
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
-    alert("Vai tomar no cu")
+    alert("Deu certo!!!")
 }
 
 function finalizarAguardar(texto) {
