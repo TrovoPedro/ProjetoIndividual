@@ -8,14 +8,21 @@ html{
 }
 
 body{
-    background: #797575;
+    background: #eeae4f;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    align-items: center;
 }
 
 .login{
-    background: #db3636;
-    width: 100vw;
-    height: 100vh;
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    background-image: url(../img/nyjahCadastro.jfif);
+    background-size: cover;
+    border-radius: 7px 9px 9px 9px;
 }
