@@ -8,10 +8,11 @@ html{
 }
 
 body{
-    background: #eeae4f;
+    background: #3c075f;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    overflow-y: hidden;
     align-items: center;
 }
 
@@ -22,7 +23,43 @@ body{
     height: 90vh;
     display: flex;
     flex-direction: row;
-    background-image: url(../img/nyjahCadastro.jfif);
-    background-size: cover;
-    border-radius: 7px 9px 9px 9px;
 }
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    height: 90vh;
+    background: #ffffff8a;
+    margin-left: 390px;
+    border-radius: 10px;
+    box-shadow: rgb(201, 235, 7) 0px 14px 15px, rgba(238, 215, 4, 0.877) 0px -4px 20px, rgba(0, 0, 0, 0.12) 4px 10px   1px, rgba(0, 0, 0, 0.17) 0px 2px 3px, rgba(0, 0, 0, 0.09) 0px -1px 2px;
+}
+
+.campo{
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.botao{
+    margin-top: 135px;
+    margin-left: 10px;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: #e8ec00;
+    transition: 500ms;
+    font-size: 20px;
+    color: #3c075f;
+}
+
+.botao:hover{
+    cursor: pointer;
+    background: #b1a502;
+    color: #fff;
+}
+
+
