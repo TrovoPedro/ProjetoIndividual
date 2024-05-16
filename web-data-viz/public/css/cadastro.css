@@ -1,6 +1,8 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #230043;
 }
 
 html{
@@ -8,12 +10,19 @@ html{
 }
 
 body{
-    background: #3c075f;
+    background: #1A0230;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
     align-items: center;
+}
+
+.voltar{
+    border-radius: 90px;
+    background: #fff;
+    height: 60px;
+    width: 60px;
 }
 
 .login{
@@ -32,34 +41,81 @@ body{
     align-items: center;
     width: 40vw;
     height: 90vh;
-    background: #ffffff8a;
+    background: #721bc4b0;
     margin-left: 390px;
     border-radius: 10px;
-    box-shadow: rgb(201, 235, 7) 0px 14px 15px, rgba(238, 215, 4, 0.877) 0px -4px 20px, rgba(0, 0, 0, 0.12) 4px 10px   1px, rgba(0, 0, 0, 0.17) 0px 2px 3px, rgba(0, 0, 0, 0.09) 0px -1px 2px;
+    box-shadow: #00ff88  0px 2px 5px, rgb(24, 49, 32) 0px -5px 17px, #00ff88 1px 1px 1px, #00ff88 0px 1px 1px, #00ff88 0px -5px 10px;
 }
 
 .campo{
     margin-top: 15px;
-    margin-left: 30px;
+    margin-left: 9px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff6b;
+
+}
+
+span{
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    font-size: 8px;
+}
+h1{
+    margin-left: 65px;
+    margin-top: 10px;
+    transition: 500ms;
+    color: #fff;
+}
+
+h1:hover{
+    color: #6a35af;
+}
+
+h2{
+    margin-left: 70px;
+    color: #00ff88;
+    font-size: 50px;
 }
 
 .botao{
-    margin-top: 135px;
+    margin-top: 85px;
     margin-left: 10px;
     width: 300px;
     height: 50px;
     border-radius: 10px;
     border: none;
-    background: #e8ec00;
-    transition: 500ms;
+    background: #00ff88;
+    transition: 900ms;
     font-size: 20px;
-    color: #3c075f;
 }
 
 .botao:hover{
     cursor: pointer;
-    background: #b1a502;
+    background: #0c6139;
     color: #fff;
+}
+
+::placeholder{
+    color: #fff;
+    text-align: center;
+}
+
+.voltarH1{
+    color: #000;
+    margin-left: 10px;
+    margin-top: 20px;
 }
 
 
