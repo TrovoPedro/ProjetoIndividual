@@ -23,6 +23,9 @@ body{
     background: #fff;
     height: 60px;
     width: 60px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
 }
 
 .login{
@@ -32,19 +35,45 @@ body{
     height: 90vh;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     display: flex;
+    position: absolute;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 40vw;
     height: 90vh;
     background: #721bc4b0;
-    margin-left: 390px;
     border-radius: 10px;
-    box-shadow: #00ff88  0px 2px 5px, rgb(24, 49, 32) 0px -5px 17px, #00ff88 1px 1px 1px, #00ff88 0px 1px 1px, #00ff88 0px -5px 10px;
+    z-index: 1;
+    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
+}
+
+.containerBaixo{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40.5vw;
+    height: 94vh;
+    background: #721bc4b0;
+    border-radius: 10px;
+    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
+}
+
+@keyframes shadow-animated{
+    0%{
+        box-shadow: 0 0 5px rgb(red, green, blue);
+    }
+    100%{
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+
+    }
 }
 
 .campo{
@@ -114,8 +143,13 @@ h2{
 
 .voltarH1{
     color: #000;
-    margin-left: 10px;
-    margin-top: 20px;
+    position: absolute;
+    left: -55px;
+    top: 10px;
+}
+
+.voltarH1:hover{
+    background: #000;
 }
 
 
