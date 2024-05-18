@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Teachers", sans-serif;
+    color: #230043;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #1A0230;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    align-items: center;
+}
+
+.voltar{
+    border-radius: 90px;
+    background: #fff;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.login{
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    height: 90vh;
+    background: #721bc4b0;
+    border-radius: 10px;
+    z-index: 1;
+    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
+}
+
+.containerBaixo{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 41.1vw;
+    height: 92vh;
+    background: #721bc4b0;
+    border-radius: 10px;
+    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
+}
+
+.campo{
+    margin-top: 15px;
+    margin-left: 9px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: #ffffff6b;
+
+}
+
+span{
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    font-size: 8px;
+}
+h1{
+    margin-left: 65px;
+    margin-top: 10px;
+    transition: 500ms;
+    color: #fff;
+}
+
+h1:hover{
+    color: #6a35af;
+}
+
+h2{
+    margin-left: 90px;
+    margin-bottom: 50px;
+    color: #00ff88;
+    font-size: 50px;
+}
+
+.botao{
+    margin-top: 85px;
+    margin-left: 10px;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background: #00ff88;
+    transition: 900ms;
+    font-size: 20px;
+}
+
+.botao:hover{
+    cursor: pointer;
+    background: #0c6139;
+    color: #fff;
+}
+
+::placeholder{
+    color: #fff;
+    text-align: center;
+}
+
+.voltarH1{
+    color: #000;
+    position: absolute;
+    left: -58px;
+    top: 10px;
+}
