@@ -57,32 +57,23 @@
     </section>
 
     <section id="sessaoCalcular">
-        <h2 class="h2Oopcao">Calcular imc</h2>
+        <h2 class="h2Oopcao">Calcular perda de peso</h2>
         <div class="cardOpcao">
             <div class="card">
                 <h1 class="tituloInput1">Altura</h1>
                 <input class="inputs" type="text" id="inputAltura" placeholder="exemplo: 1.89">
                 <h1 class="tituloInput2">Peso atual</h1>
                 <input class="inputs" type="text" id="inputPeso" placeholder="exemplo: 59.90">
+                <h1 class="tituloInput3">Meta de peso</h1>
+                <input class="inputs" type="text" id="inputMetaPeso" placeholder="exemplo: 59.90">
+                <h1 class="tituloPerda4">Horas andadas de skate</h1>
+                <input class="inputs" type="text" id="inputHorasSkate" placeholder="exemplo: 4"><br><br>
                 <button class="btnCalcular" onclick="calcularPeso()">Calcular Peso</button>
             </div>
             <div id="card">
-
-            </div>
-        </div>
-        <h2 class="h2Perda">Calcular perda de peso com skate</h2>
-        <div class="cardOpcao2">
-            <div class="card">
-                <h1 class="tituloPerda1">Peso</h1>
-                <input class="inputs" type="text" id="inputPeso" placeholder="exemplo: 1.89">
-                <h1 class="tituloPerda2">Meta de peso</h1>
-                <input class="inputs" type="text" id="inputMetaPeso" placeholder="exemplo: 59.90">
-                <h1 class="tituloPerda3">Horas andadas de skate</h1>
-                <input class="inputs" type="text" id="inputHorasSkate" placeholder="exemplo: 4"><br><br>
-                <button class="btnCalcular" onclick="calcularPerda()">Calcular Perda</button>
-            </div>
-            <div id="card2">
-                <a class="linkDash" href="dashboard/dashboard.html"><p >Ver métricas</p></a>
+                <a class="linkDash" href="dashboard/dashboard.html">
+                    <p>Ver métricas</p>
+                </a>
             </div>
         </div>
     </section>
@@ -117,42 +108,44 @@
 </html>
 
 <script>
-    var altura = 0;
-    var pesoAtual = 0;
 
     function calcularPeso() {
-        altura = Number(inputAltura.value);
-        pesoAtual = Number(inputPeso.value);
+        var altura = Number(inputAltura.value);
+        var pesoAtual = Number(inputPeso.value);
+        var qtdHoras = Number(inputHorasSkate.value);
+        var metaPeso = Number(inputMetaPeso.value);
+        var caloriasPH = 500;
 
-        if (inputAltura.value == "" || inputPeso.value == "") {
+        if (inputAltura.value == "" || inputPeso.value == "" || inputHorasSkate.value == "" || inputMetaPeso.value == "") {
             alert("Por favor, preecha todos os campos");
         } else {
             var resultadoImc = pesoAtual / (altura * altura);
             if (resultadoImc <= 18.5) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está abaixo do peso`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está abaixo do peso.`;
             } else if (resultadoImc >= 18.6 && resultadoImc <= 24.9) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, parabéns, você está no peso ideal`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, parabéns, você está no peso ideal.`;
             } else if (resultadoImc >= 25 && resultadoImc <= 29.99) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está sobrepeso e pode ser prejudicial a saúde`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está sobrepeso e pode ser prejudicial a saúde. <br>`;
             } else if (resultadoImc >= 30 && resultadoImc <= 34.9) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 1 e é prejudicial a saúde`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 1 e é prejudicial a saúde. <br>`;
             } else if (resultadoImc >= 35 && resultadoImc <= 39.99) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é muito prejudicial a saúde`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é muito prejudicial a saúde. <br>`;
             } else {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é extremamente prejudicial a saúde`;
+                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é extremamente prejudicial a saúde. <br>`;
             }
-        }
-    }
 
-    function calcularPerda() {
-        var peso = Number(inputPeso.value);
-        var metaPeso = Number(inputMetaPeso.value);
-        var horasAndadas = Number(inputHorasSkate.value);
+            var resultadoCalorias = qtdHoras * caloriasPH;
+            var pesoCalorias = 7700 / pesoAtual;
 
-        if (inputPeso.value == "" || inputMetaPeso.value == "" || inputHorasSkate.value == "") {
-            alert("Por favor, preencha todos os campos")
-        } else {
-            card2.innerHTML += `AAAAAAAAA`;
+            if(resultadoCalorias <= 7700){
+                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCalorias} calorias. <br>
+                Faltam ${7700 - pesoCalorias} calorias para perder 1kg. <br> Peso atual: ${pesoAtual = resultadoCalorias - resultadoCalorias}. <br>
+                Faltam ${pesoAtual - metaPeso} para bater sua meta.`;
+            }else{
+                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCalorias}. <br>
+                Peso atual: ${pesoAtual = resultadoCalorias - pesoAtual}. <br>
+                Faltam ${pesoAtual - metaPeso} para bater sua meta.`;
+            }
         }
     }
 </script>
