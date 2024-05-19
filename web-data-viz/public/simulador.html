@@ -6,75 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Simulador</title>
+    <title>Calculadora de Peso</title>
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="stylesheet" href="css/calculadoraPeso.css">
+    <link rel="icon" href="img/S4L.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
 <body>
 
-    <!--header inicio-->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">Inicial</a>
-                </li>
-                <li class="agora">Simulador</li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./login.html">Cadastro</a>
-                </li>
+    <header>
+        <img class="logo" src="img/S4L.png" alt="">
+        <nav class="nav-bar">
+            <ul>
+                <a class="links" href="#sessaoSobre">
+                    <li>Sobre a calculadora</li>
+                </a>
+                <a class="links" href="#sessaoCalcular">
+                    <li>Calcular</li>
+                </a>
+                <a class="links" href="#rodape">
+                    <li>Contato</li>
+                </a>
             </ul>
+            <ul>
+                <a class="links" href="cadastro.html">
+                    <li class="cadastroLogin">Cadastro</li>
+                </a>
+                <a class="links" href="login.html">
+                    <li class="cadastroLogin">Login</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <section id="sessaoSobre" class="containerSobre">
+        <img class="svg" src="img/img.svg" alt="">
+        <p class="sobreCalc">A calculadora da S4L permite que você faça cálculos de seu peso<br> e trará informações de como você poderá diminuir seu peso usando o skate para isso.<br>
+            Além disso permitirá que você informe sua meta de peso e seu peso atual para que você possa acompanhar sua evolução.<br>
+            Para nós é de extrema importância que você defina uma meta, por que sabemos que quando temos objetivos concretos,<br> criamos força de vontade para continuar mesmo que seja difícil.<br>
+            Então por isso temos uma calculadora de peso que grava o peso do usuário,<br> define metas e exibe essas informações em um gráfico.<br> É uma ferramenta poderosa para qualquer pessoa comprometida com a perda de peso<br> ou a manutenção de um peso saudável. Ao fornecer uma maneira visual e interativa de acompanhar o progresso,<br>essa ferramenta pode transformar a jornada de saúde, tornando-a mais organizada e motivadora.
+        </p>
+    </section>
+
+    <section id="sessaoCalcular">
+        <h2 class="h2Oopcao">Calcule</h2>
+        <div class="cardOpcao">
+            <div class="card">
+                <h1 class="tituloInput1">Altura</h1>
+                <input class="inputs" type="text" id="inputAltura" placeholder="exemplo: 1.89">
+                <h1 class="tituloInput2">Peso atual</h1>
+                <input class="inputs" type="text" id="inputPeso" placeholder="exemplo: 59.90">
+                <h1 class="tituloInput3">Meta de peso</h1>
+                <input class="inputs" type="text" id="inputMetaPeso" placeholder="exemplo: 40.50"><br><br>
+                <button class="btnCalcular" onclick="calcularPeso()">Calcular Peso</button>
+            </div>
+            <div class="card">
+          
+            </div>
         </div>
-    </div>
+    </section>
 
-
-    <!-- simulador inicio -->
-    <div class="simulador">
-        <div class="container">
-            <h2>Simulador</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium tempora architecto sint fugit
-                dolorum? Ipsum laborum magnam similique labore, voluptate amet reprehenderit rem ab blanditiis quisquam
-                laboriosam eaque alias. Reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Accusantium tempora architecto sint fugit dolorum? Ipsum laborum magnam similique labore, voluptate amet
-                reprehenderit rem ab blanditiis quisquam laboriosam eaque alias. Reiciendis.</p>
-
+    <section class="sessao-rodape" id="rodape">
+        <div class="cardFooter">
+            <a href="https://api.whatsapp.com/send/?phone=5511942170850&text&type=phone_number&app_absent=0"><img
+                    src="img/chamada-telefonica.png" alt=""></a>
+            <h1 class="tituloFooter">Telefone</h1>
+            <p class="subtituloFooter">(11) 942170850</p>
         </div>
-    </div>
-    <!-- simulador fim -->
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
+        <div class="cardFooter">
+            <a href="mailto:pedro.tsouza@sptech.school"><img src="img/o-email.png" alt=""></a>
+            <h1 class="tituloFooter">E-mail</h1>
+            <p class="subtituloFooter">pedro.tsouza@sptech.school</p>
         </div>
-    </div>
-    <!--footer fim-->
+        <div class="cardFooter">
+            <a href="https://www.linkedin.com/in/pedro-trovo-4189a7215/"><img src="img/linkedin.png" alt=""></a>
+            <h1 class="tituloFooter">LinkedIn</h1>
+            <p class="subtituloFooter">@PedroTrovo</p>
+        </div>
+        <div class="cardFooter">
+            <a href="https://github.com/TrovoPedro"><img src="img/github.png" alt=""></a>
+            <h1 class="tituloFooter">Github</h1>
+            <p class="subtituloFooter">@TrovoPedro</p>
+        </div>
+    </section>
 
 
 </body>

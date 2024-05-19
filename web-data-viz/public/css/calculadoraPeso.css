@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: 12%;
+    background: rgba(24, 20, 20, 0.425);
+    backdrop-filter: blur(19.5px);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 12%;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    flex-direction: row;;
+    justify-content: space-evenly;
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.links {
+    text-decoration: none;
+    color: #ffff;
+    transition: 400ms;
+    font-size: 16px;
+}
+
+.links:hover{
+    margin-top: -5px;
+    border-bottom: 1px solid #68228B;
+}
+
+.logo{
+    width: 150px;
+    margin-left: 20px;
+    margin-right: 305PX;
+}
+
+
+.containerSobre{
+    width: 100vw;
+    height: 100vh;
+    background: #1a0230;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.svg{
+    width: 650px;
+    height: 400px;
+    margin-bottom: 180px;
+}
+
+.sobreCalc{
+    margin-right: 30px;
+    color: #fff;
+    margin-bottom: 210px;
+}
+
+#sessaoCalcular{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.h2Oopcao{
+    color: #8700f5;
+    margin-top: -100px;
+    margin-left: 615px;
+    font-size: 40px;
+}
+
+.cardOpcao{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+    margin-left: 15px;
+}
+
+.card{
+    width: 550px;
+    height: 480px;
+    background: #4c098bf8;
+    border-radius: 10px;
+    transition: 400ms;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 10px 30px rgba(3, 3, 3, 3);
+}
+
+.tituloInput1{
+    margin-left: -170px;
+    margin-top: 15px;
+    color: #00ff88;
+}
+
+.tituloInput2{
+    margin-left: -125px;
+    margin-top: 15px;
+    color: #00ff88;
+}
+
+.tituloInput3{
+    margin-left: -90px;
+    margin-top: 50px;
+    color: #00ff88;
+}
+
+.inputs{
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: #00000063;
+    color: #fff;
+    outline: none;
+}
+
+::placeholder{
+    margin-bottom: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+.btnCalcular{
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+    background: #00ff88;
+    color: #1a0230;
+    font-size: 20px;
+    transition: 500ms;
+}
+
+.btnCalcular:hover{
+    background: #0c6139;
+
+}
+
+.sessao-rodape{
+    background: rgb(250, 250, 250);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cardFooter{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 120px;
+    margin-left: 150px;
+}
+
+.subtituloFooter{
+    margin-top: 4px;
+}
+
+.tituloFooter{
+    color: #8060ca;
+}
