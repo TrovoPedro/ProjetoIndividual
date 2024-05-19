@@ -115,6 +115,14 @@
         var qtdHoras = Number(inputHorasSkate.value);
         var metaPeso = Number(inputMetaPeso.value);
         var caloriasPH = 500;
+        var resultadoCaloriasAndadas = qtdHoras * caloriasPH;
+        var pesoGramas = pesoAtual * 1000;
+        var pesoCalorias = 7700 * pesoGramas;
+        pesoGramas = pesoGramas - (pesoGramas / 7.7);
+        var pesoMMeta = pesoAtual - metaPeso;
+
+        console.log(pesoGramas);
+
 
         if (inputAltura.value == "" || inputPeso.value == "" || inputHorasSkate.value == "" || inputMetaPeso.value == "") {
             alert("Por favor, preecha todos os campos");
@@ -134,17 +142,16 @@
                 card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é extremamente prejudicial a saúde. <br>`;
             }
 
-            var resultadoCalorias = qtdHoras * caloriasPH;
-            var pesoCalorias = 7700 / pesoAtual;
-
-            if(resultadoCalorias <= 7700){
-                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCalorias} calorias. <br>
-                Faltam ${7700 - pesoCalorias} calorias para perder 1kg. <br> Peso atual: ${pesoAtual = resultadoCalorias - resultadoCalorias}. <br>
-                Faltam ${pesoAtual - metaPeso} para bater sua meta.`;
-            }else{
-                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCalorias}. <br>
-                Peso atual: ${pesoAtual = resultadoCalorias - pesoAtual}. <br>
-                Faltam ${pesoAtual - metaPeso} para bater sua meta.`;
+            if (resultadoCaloriasAndadas <= 7700) {
+                var pesoAG = pesoGramas / 1000;
+                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas} calorias. <br>
+                Faltam ${pesoCalorias - 7700} calorias para perder 1kg. <br> Peso atual: ${pesoAtual = pesoAG.toFixed(2)}. <br>
+                Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
+            } else {
+                var pesoAG = pesoGramas / 1000;
+                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas.toFixed(4)}. <br>
+                Peso atual: ${pesoAtual = pesoAG.toFixed(2)}. <br>
+                Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
             }
         }
     }
