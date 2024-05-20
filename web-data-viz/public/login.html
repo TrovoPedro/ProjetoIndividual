@@ -91,9 +91,9 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
 
                     setTimeout(function () {
                         window.location = "dashboard/dashboard.html";
