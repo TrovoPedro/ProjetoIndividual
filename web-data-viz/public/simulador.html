@@ -119,7 +119,6 @@
         var pesoGramas = pesoAtual * 1000;
         var pesoCalorias = 7700 * pesoGramas;
         var pesoMMeta = pesoAtual - metaPeso;
-        pesoGramas = pesoGramas - (pesoGramas / 7.7);
 
         if (inputAltura.value == "" || inputPeso.value == "" || inputHorasSkate.value == "" || inputMetaPeso.value == "") {
             alert("Por favor, preecha todos os campos");
@@ -140,14 +139,19 @@
             }
 
             if (resultadoCaloriasAndadas <= 7700) {
-                var pesoAG = pesoGramas / 1000;
+                var pesoAG = pesoGramas / 1000; //peso atual em gramas
+                var pesoMostrar = 7700 - resultadoCaloriasAndadas;
+                pesoAtual = pesoAG - (resultadoCaloriasAndadas / 1000);
+
                 card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas} calorias. <br>
-                Faltam ${pesoCalorias - 7700} calorias para perder 1kg. <br> Peso atual: ${pesoAtual = pesoAG.toFixed(2)}. <br>
+                Faltam ${pesoMostrar} calorias para perder 1kg. <br> Peso atual: ${pesoAtual.toFixed(2)}. <br>
                 Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
             } else {
                 var pesoAG = pesoGramas / 1000;
-                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas.toFixed(4)}. <br>
-                Peso atual: ${pesoAtual = pesoAG.toFixed(2)}. <br>
+                pesoAtual = pesoAG - (resultadoCaloriasAndadas / 1000);
+
+                card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas}. <br>
+                Peso atual: ${pesoAtual.toFixed(2)}. <br>
                 Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
             }
 
@@ -161,7 +165,6 @@
                     // Agora vá para o arquivo routes/usuario.js
                     PesoServer: pesoAtual,
                     qtdHorasServer: qtdHoras,
-                    resultadoCAServer: resultadoCaloriasAndadas,
                     metaPesoServer: metaPeso
                 }),
             })
