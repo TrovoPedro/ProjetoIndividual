@@ -118,11 +118,8 @@
         var resultadoCaloriasAndadas = qtdHoras * caloriasPH;
         var pesoGramas = pesoAtual * 1000;
         var pesoCalorias = 7700 * pesoGramas;
-        pesoGramas = pesoGramas - (pesoGramas / 7.7);
         var pesoMMeta = pesoAtual - metaPeso;
-
-        console.log(pesoGramas);
-
+        pesoGramas = pesoGramas - (pesoGramas / 7.7);
 
         if (inputAltura.value == "" || inputPeso.value == "" || inputHorasSkate.value == "" || inputMetaPeso.value == "") {
             alert("Por favor, preecha todos os campos");
@@ -153,6 +150,46 @@
                 Peso atual: ${pesoAtual = pesoAG.toFixed(2)}. <br>
                 Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
             }
+
+            fetch("/estatistica/cadastrarEstatistica", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    PesoServer: pesoAtual,
+                    qtdHorasServer: qtdHoras,
+                    resultadoCAServer: resultadoCaloriasAndadas,
+                    metaPesoServer: metaPeso
+                }),
+            })
+                .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+
+                    if (resposta.ok) {
+                        cardErro.style.display = "block";
+
+                        mensagem_erro.innerHTML =
+                            "Informações gravadas com sucesso";
+
+                        setTimeout(() => {
+                            window.location = "dashboard/dashboard.html";
+                        }, "2000");
+
+                        limparFormulario();
+                        finalizarAguardar();
+                    } else {
+                        throw "Houve um erro ao tentar gravar as informações";
+                    }
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    finalizarAguardar();
+                });
+
+            return false;
         }
     }
 </script>

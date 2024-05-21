@@ -6,21 +6,22 @@ create table usuario(
 	nomeUsuario varchar(45),
 	email varchar(256),
 	senha varchar(45)
+);
 
+create table medida(
+	idMedida int primary key auto_increment,
+    nomeMedida varchar(45)
 );
 
 create table estatistica(
-	idEstatistica int primary key auto_increment,
-	pesoUsuario decimal(3,3),
-	metaPeso decimal(3,3),
+	idEstatistica int auto_increment,
+	pesoUsuario decimal(6,3),
+	metaPeso decimal(6,3),
 	fkUsuario int,
+    fkMedida int,
 	constraint fkUserEstatistica foreign key(fkUsuario)
-	references usuario(idUsuario)
-);
-
-create table medidas(
-
-
-
-	
+	references usuario(idUsuario),
+    constraint fkMedidaEstatistica foreign key(fkMedida)
+    references medida(idMedida),
+    constraint fkComposta primary key(idEstatistica, fkUsuario, fkMedida)
 );
