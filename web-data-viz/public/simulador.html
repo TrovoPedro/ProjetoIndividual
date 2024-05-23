@@ -119,6 +119,7 @@
         var pesoGramas = pesoAtual * 1000;
         var pesoCalorias = 7700 * pesoGramas;
         var pesoMMeta = pesoAtual - metaPeso;
+        var idUser = sessionStorage.ID_USUARIO
 
         if (inputAltura.value == "" || inputPeso.value == "" || inputHorasSkate.value == "" || inputMetaPeso.value == "") {
             alert("Por favor, preecha todos os campos");
@@ -165,7 +166,8 @@
                     // Agora vá para o arquivo routes/usuario.js
                     PesoServer: pesoAtual,
                     qtdHorasServer: qtdHoras,
-                    metaPesoServer: metaPeso
+                    metaPesoServer: metaPeso,
+                    idUserServer: idUser
                 }),
             })
                 .then(function (resposta) {

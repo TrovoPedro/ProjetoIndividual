@@ -17,6 +17,7 @@ create table estatistica(
 	idEstatistica int auto_increment,
 	pesoUsuario decimal(6,3),
 	metaPeso decimal(6,3),
+    qtdHoras float,
 	fkUsuario int,
     fkMedida int,
 	constraint fkUserEstatistica foreign key(fkUsuario)
@@ -25,3 +26,10 @@ create table estatistica(
     references medida(idMedida),
     constraint fkComposta primary key(idEstatistica, fkUsuario, fkMedida)
 );
+
+insert into medida values
+	(default, 'Primeira medida');
+    
+select * from medida;
+
+select * from estatistica;
