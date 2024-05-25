@@ -1,11 +1,71 @@
-/* pagina mural */
-
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body {
-  margin: 0;
+*{
   padding: 0;
+  margin: 0;
+}
+
+body {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: #1d0446c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header{
+  width: 100%;
+  height: 12%;
+  background: rgba(24, 20, 20, 0.425);
+  backdrop-filter: blur(19.5px);
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  margin-top: -540px;
+}
+
+.nav-bar{
+  display: flex;
+  align-items: center;
+  flex-direction: row;;
+  justify-content: space-evenly;
+}
+
+ul{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 250px;
+}
+
+li{
+  text-decoration: none;
+  list-style: none;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.links {
+  text-decoration: none;
+  color: #ffff;
+  transition: 400ms;
+  font-size: 16px;
+}
+
+.links:hover{
+  margin-top: -5px;
+  border-bottom: 1px solid #68228B;
+}
+
+.logo{
+  width: 150px;
+  margin-left: 20px;
+  height: 70px;
+  margin-top: 5px;
 }
 
 .label-captura {
@@ -343,13 +403,18 @@ canvas {
   left: 0;
   z-index: 999;
   height: 100vh;
-  width: 20%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 2px solid #FFC700;
+  background-color: #13083a;
+}
+
+img{
+  width: 220px;
+  height: 150px;
 }
 
 .dash-right {
@@ -375,9 +440,10 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #FFC700;
   font-weight: 300;
   font-size: 1.2rem;
+  margin-top: 15px;
 }
 
 .hello h3 span {
@@ -415,14 +481,34 @@ canvas {
 }
 
 .btn-logout {
-  margin: 0;
+  margin-left: 40px;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  color: rgb(202, 173, 7);
   border-radius: 10px;
   text-align: center;
-  padding: 10px 15px;
-  margin-bottom: 100px;
   cursor: pointer;
+  transition: 500ms;
+}
+
+.btn-logout:hover {
+  color: #68228B;
+}
+
+#container {
+  background: rgba(24, 6, 94, 0.445);
+  width: 80%;
+  height: 84%;
+  margin-top: 80px;
+  border-radius: 0px 10px 10px 0px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0px 2px 5px 2px #212124;
+}
+
+.lateral{
+  background: rgba(24, 6, 94, 0.445);
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #dfd004;
 }

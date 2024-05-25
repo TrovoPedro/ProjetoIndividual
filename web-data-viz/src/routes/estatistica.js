@@ -8,4 +8,16 @@ router.post("/cadastrarEstatistica", function (req, res) {
     estatisticaController.cadastrarEstatistica(req, res);
 })
 
+router.get("/:idUser", function (req, res) {
+  estatisticaController.buscarEstatistica(req, res);
+});
+
+router.get("/ultimas/:idUser", function (req, res) {
+    estatisticaControllerController.buscarUltimasMedidas(req, res);
+});
+
+router.get("/tempo-real/:idUser", function (req, res) {
+    estatisticaControllerController.buscarEstatisticasEmTempoReal(req, res);
+})
+
 module.exports = router;

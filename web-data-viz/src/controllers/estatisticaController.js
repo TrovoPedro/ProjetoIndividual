@@ -37,6 +37,41 @@ function cadastrarEstatistica(req, res) {
     }
 }
 
+function buscarEstatistica(req, res) {
+    var idUsuario = req.params.idUsuario;
+  
+    estatisticaModel.buscarEstatistica(idUsuario).then((resultado) => {
+      if (resultado.length > 0) {
+        res.status(200).json(resultado);
+      } else {
+        res.status(204).json([]);
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+      console.log("Houve um erro ao buscar as estatisticas: ", erro.sqlMessage);
+      res.status(500).json(erro.sqlMessage);
+    });
+  }
+
+  function buscarEstatisticasEmTempoReal(req, res) {
+
+    console.log(`Recuperando estatisticas em tempo real`);
+
+    estatisticaModel.buscarEstatisticasEmTempoReal().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas estatisticas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
-    cadastrarEstatistica
+    cadastrarEstatistica,
+    buscarEstatistica,
+    buscarEstatisticasEmTempoReal
 }
