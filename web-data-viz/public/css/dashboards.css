@@ -510,5 +510,15 @@ img{
   background: rgba(24, 6, 94, 0.445);
   width: 20%;
   height: 100%;
-  border-right: 2px solid #dfd004;
+  border-right: 2px solid #FFC700;
+}
+
+#GraficoBarras{
+  width: 20%;
+  height: 10%;
+}
+
+canvas #GraficoBarras .grafico1_estatisticas{
+  width: 20%;
+  height: 10%;
 }

@@ -126,17 +126,17 @@
         } else {
             var resultadoImc = pesoAtual / (altura * altura);
             if (resultadoImc <= 18.5) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está abaixo do peso.`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, você está abaixo do peso.`;
             } else if (resultadoImc >= 18.6 && resultadoImc <= 24.9) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, parabéns, você está no peso ideal.`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, parabéns, você está no peso ideal.`;
             } else if (resultadoImc >= 25 && resultadoImc <= 29.99) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, você está sobrepeso e pode ser prejudicial a saúde. <br>`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, você está sobrepeso e pode ser prejudicial a saúde. <br>`;
             } else if (resultadoImc >= 30 && resultadoImc <= 34.9) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 1 e é prejudicial a saúde. <br>`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 1 e é prejudicial a saúde. <br>`;
             } else if (resultadoImc >= 35 && resultadoImc <= 39.99) {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é muito prejudicial a saúde. <br>`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é muito prejudicial a saúde. <br>`;
             } else {
-                card.innerHTML = `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é extremamente prejudicial a saúde. <br>`;
+                card.innerHTML += `Seu imc é de ${resultadoImc.toFixed(2)}, CUIDADO, você está na obesidade grau 2 e é extremamente prejudicial a saúde. <br>`;
             }
 
             if (resultadoCaloriasAndadas <= 7700) {
