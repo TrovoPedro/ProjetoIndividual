@@ -156,7 +156,7 @@
                 Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
             }
 
-            fetch("/estatistica/cadastrarEstatistica", {
+            fetch("/estatistica/gravarEstatistica", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -164,9 +164,9 @@
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
-                    PesoServer: pesoAtual,
-                    qtdHorasServer: qtdHoras,
+                    pesoServer: pesoAtual,
                     metaPesoServer: metaPeso,
+                    qtdHorasServer: qtdHoras,
                     idUserServer: idUser
                 }),
             })

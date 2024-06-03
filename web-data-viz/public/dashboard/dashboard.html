@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body onload="fetchGrafico()">
     <header>
         <a href="../index.html"><img class="logo" src="../img/S4L.png" alt=""></a>
         <nav class="nav-bar">
@@ -49,8 +49,7 @@
     <div id="container">
         <div class="lateral">
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span></h3><br><br><br>
-                <button onclick="fetchGrafico()">AAA</button>
+                <h3>Olá, <span id="b_usuario">usuário</span></h3>
             </div>
         </div>
         <canvas id="GraficoBarras" class="grafico1_estatisticas"></canvas>
@@ -100,10 +99,8 @@
     }
 
     function atualizarGrafico(dados) { // Esta função espera 1 parâmetro, que aqui se chamará "dados"
-
         const labels = ['Peso', 'Meta de Peso']; // Constante para definir os labels, que são fixamente apenas esses dois
-        var dadosGrafico = [dados[0], dados[1]]; // Separando os dados para o gráfico com base no parâmetro recebido por esta função
-        dadosGrafico = JSON.stringify(dadosGrafico); // Transformando os dados em formato JSON em string, para que possam ser interpretados
+        var dadosGrafico = [dados[0].pesoUsuario, dados[0].metaPeso]; // Separando os dados para o gráfico com base no parâmetro recebido por esta função
 
         if (chart) { // Verificando se um gráfico já existe, ou seja, se há conteúdo na variável -> Esse é o motivo da variável "chart" ser global
             chart.destroy(); // Destruindo o gráfico se a condição for cumprida
@@ -113,7 +110,7 @@
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: labels,
+                labels: ["Peso","Meta Peso"],
                 datasets: [{
                     data: dadosGrafico,
                     backgroundColor: ['#dce738cb', '#a26edfcb'],
