@@ -18,7 +18,7 @@
 
 </head>
 
-<body onload="fetchGrafico()">
+<body onload="refreshGrafico(); historico()">
     <header>
         <a href="../index.html"><img class="logo" src="../img/S4L.png" alt=""></a>
         <nav class="nav-bar">
@@ -47,12 +47,12 @@
         </nav>
     </header>
     <div id="container">
+        <canvas id="GraficoBarras" class="grafico1_estatisticas"></canvas>
         <div class="lateral">
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span></h3>
             </div>
         </div>
-        <canvas id="GraficoBarras" class="grafico1_estatisticas"></canvas>
     </div>
 </body>
 
@@ -61,6 +61,33 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var chart = null;  // inicializando a variável chart no escopo global, pois ela será verificada num if mais abaixo
+
+    function historico() {
+        fetch("/estatistica/historico", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO fetchRanking!");
+
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(json);
+                    var respostaBanco = json; // Armazenando o JSON que veio como resposta do fetch numa variável local
+                });
+            } else {
+                console.log("Houve um erro ao capturar as ultimas pesagens");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        });
+
+        return false;
+    }
 
     function fetchGrafico() {
 
@@ -93,34 +120,47 @@
         return false;
     }
 
+    function refreshHistorico() {
+        historico(); // Chama a função uma vez
+        setInterval(historico(), 5000); // Chama a função de 30 em 30 segundos, para que o gráfico seja constantemente atualizado
+    }
+
     function refreshGrafico() {
         fetchGrafico(); // Chama a função uma vez
-        setInterval(fetchGrafico(), 30000); // Chama a função de 30 em 30 segundos, para que o gráfico seja constantemente atualizado
+        setInterval(fetchGrafico(), 5000); // Chama a função de 30 em 30 segundos, para que o gráfico seja constantemente atualizado
     }
+
 
     function atualizarGrafico(dados) { // Esta função espera 1 parâmetro, que aqui se chamará "dados"
         const labels = ['Peso', 'Meta de Peso']; // Constante para definir os labels, que são fixamente apenas esses dois
-        var dadosGrafico = [dados[0].pesoUsuario, dados[0].metaPeso]; // Separando os dados para o gráfico com base no parâmetro recebido por esta função
+        var dadosGrafico = 0; // Separando os dados para o gráfico com base no parâmetro recebido por esta função
 
         if (chart) { // Verificando se um gráfico já existe, ou seja, se há conteúdo na variável -> Esse é o motivo da variável "chart" ser global
             chart.destroy(); // Destruindo o gráfico se a condição for cumprida
         }
 
+
+        for (var i = 0; i <= dados.length - 1; i++) {
+            dadosGrafico = [dados[i].pesoUsuario, dados[i].metaPeso];
+
+        }
+
         const ctx = document.getElementById('GraficoBarras').getContext('2d');
         chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Peso","Meta Peso"],
-                datasets: [{
-                    data: dadosGrafico,
-                    backgroundColor: ['#dce738cb', '#a26edfcb'],
-                    borderColor: ['rgba(54, 162, 235, 1)'],
-                    borderWidth: 0.5
-                }]
-            },
-            options: {
-                aspectRatio: 1.5
-            }
-        });
+                type: 'bar',
+                data: {
+                    labels: ["Peso", "Meta Peso"],
+                    datasets: [{
+                        data: dadosGrafico,
+                        backgroundColor: ['#dce738cb', '#a26edfcb'],
+                        borderColor: ['rgba(54, 162, 235, 1)'],
+                        borderWidth: 0.5
+                    }]
+                },
+                options: {
+                    aspectRatio: 1.5
+                }
+            });
+
     }
 </script>

@@ -11,4 +11,8 @@ router.get("/estatisticasUsuario", function (req, res) {
   estatisticaController.buscarEstatisticas(req, res);
 })
 
+router.get("/historico", function (req, res) {
+  estatisticaController.buscarUltimasEstatisticas(req, res);
+});
+
 module.exports = router;
