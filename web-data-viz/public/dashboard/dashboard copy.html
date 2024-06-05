@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../img/S4L.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body onload="fetchGrafico()">
+    <header>
+        <a href="../index.html"><img class="logo" src="../img/S4L.png" alt=""></a>
+        <nav class="nav-bar">
+            <ul>
+                <a class="links" href="../index.html">
+                    <li>Inicio</li>
+                </a>
+                <a class="links" href="../index.html">
+                    <li>Sobre o Projeto</li>
+                </a>
+                <a class="links" href="../index.html">
+                    <li>Equipe</li>
+                </a>
+                <a class="links" href="../simulador.html">
+                    <li>Calcular peso</li>
+                </a>
+                <a class="links" href="../index.html">
+                    <li>Contato</li>
+                </a>
+            </ul>
+            <ul>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <canvas id="GraficoBarras" class="grafico1_estatisticas"></canvas>
+        <canvas id="GraficoBarras2" class="grafico1_estatisticas"></canvas>
+        <div class="lateral">
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span></h3>
+            </div>
+            <button class="btnPeso" onclick="graficoPeso()">Gráfico de Peso</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var listaPeso = [];
+    var listaMeta = [];
+    var listaData = [];
+
+    function fetchGrafico() {
+        fetch("/estatistica/estatisticasUsuario")
+            .then(res => {
+                res.json().then(response => {
+                    console.log(response);
+                    for (var i = 0; i < response.length; i++) {
+                        
+                        listaPeso.push(response[i].pesoUsuario);
+                        listaData.push(response[i].dtEstatistica);
+                        listaMeta.push(response[i].metaPeso);
+                    }
+
+                    const ctx = document.getElementById('GraficoBarras');
+                    const labels = ['Peso'];
+
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Peso Atual',
+                                data: listaPeso,
+                                borderWidth: 1,
+                                backgroundColor: ['#b26dbd']
+                            },
+                            {
+                                label: 'Meta Peso',
+                                data: listaMeta,
+                                borderWidth: 1,
+                                backgroundColor: ['#142886']
+                            }
+                            ]
+                        },
+                       
+                    });
+
+                })
+                    .catch(err => {
+                        console.error('Erro ao estatisticas', err);
+                    });
+            });
+    }
+
+</script>

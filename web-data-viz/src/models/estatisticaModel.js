@@ -25,7 +25,7 @@ function buscarUltimasEstatisticas(limite) {
 
 function buscarEstatisticas(idUser) {
     
-    var instrucaoSql = `SELECT pesoUsuario, metaPeso, fkUsuario FROM estatistica`;
+    var instrucaoSql = `SELECT pesoUsuario, metaPeso,  DATE_FORMAT(dtEstatistica, '%d/%m/%y') as dtEstatistica FROM estatistica`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

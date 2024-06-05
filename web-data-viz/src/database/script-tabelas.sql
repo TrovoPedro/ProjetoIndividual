@@ -18,13 +18,11 @@ create table estatistica(
 	pesoUsuario decimal(6,3),
 	metaPeso decimal(6,3),
     qtdHoras float,
+	dtEstatistica datetime default current_timestamp,
 	fkUsuario int,
-    fkMedida int,
 	constraint fkUserEstatistica foreign key(fkUsuario)
 	references usuario(idUsuario),
-    constraint fkMedidaEstatistica foreign key(fkMedida)
-    references medida(idMedida),
-    constraint fkComposta primary key(idEstatistica, fkUsuario, fkMedida)
+    constraint fkComposta primary key(idEstatistica, fkUsuario)
 );
 
 insert into medida values
@@ -32,4 +30,4 @@ insert into medida values
     
 select * from medida;
 
-select * from estatistica;
+select * from estatistica;	

@@ -9,6 +9,10 @@ html{
     scroll-behavior: smooth;
 }
 
+.alerta_erro{
+    z-index: 3;
+}
+
 body{
     background: #1A0230;
     width: 100vw;
@@ -79,7 +83,12 @@ body{
     border-radius: 10px;
     border: none;
     background: #ffffff6b;
+    padding: 7px;
+    color: #fff;
+}
 
+.inputs:checked{
+    border: none;
 }
 
 span{
