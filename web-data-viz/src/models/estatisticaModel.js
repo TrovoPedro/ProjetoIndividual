@@ -23,7 +23,7 @@ function buscarUltimasEstatisticas(limite) {
     return database.executar(instrucaoSql);
 }
 
-function buscarEstatisticas(idUser) {
+function buscarEstatisticas() {
     
     var instrucaoSql = `SELECT pesoUsuario, metaPeso,  DATE_FORMAT(dtEstatistica, '%d/%m/%y') as dtEstatistica FROM estatistica`;
 

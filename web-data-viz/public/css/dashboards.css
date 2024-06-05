@@ -90,7 +90,7 @@ img {
   margin-left: 40px;
   padding: 0;
   width: 20%;
-  color: rgb(202, 173, 7);
+  color: #f3cd23;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
@@ -125,15 +125,32 @@ img {
 .btnPeso{
   width: 150px;
   height: 50px;
-  margin-top: 175px;
+  margin-top: 160px;
   border: none;
   border-radius: 25px;
   transition: 500ms;
-  background: #b6960a;
+  background: #f3cd23;
   color: #13083a;
 }
 
 .btnPeso:hover{
+  background: #000000a4;
+  cursor: pointer;
+  color: #FFF;
+}
+
+.btnAmbos{
+  width: 150px;
+  height: 50px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 25px;
+  transition: 500ms;
+  background: #f3cd23;
+  color: #13083a;
+}
+
+.btnAmbos:hover{
   background: #000000a4;
   cursor: pointer;
   color: #FFF;
