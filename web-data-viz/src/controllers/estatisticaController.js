@@ -14,9 +14,9 @@ function cadastrarEstatistica(req, res) {
         res.status(400).send("Seu email está undefined!");
     } else if (metaPeso == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }  else if (idUser == undefined) {
+    } else if (idUser == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }else {
+    } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         estatisticaModel.cadastrarEstatistica(peso, metaPeso, qtdHoras, idUser)
@@ -44,35 +44,29 @@ function buscarUltimasEstatisticas(req, res) {
     console.log(`Recuperando as ${limite_linhas} ultimas pesagens`);
 
     estatisticaModel.buscarUltimasEstatisticas(limite_linhas)
-    .then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
-        }
-    }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro buscar as ultimas estatisticas.", erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-    });
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro buscar as ultimas estatisticas.", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
 }
 
 function buscarEstatisticas(req, res) {
-
-    console.log(`Recuperando todas as estatisticas do usuario`);
-
-    estatisticaModel.buscarEstatisticas()
-    .then(function (resultado) {
-        if (resultado.length > 0) {
-            res.status(200).json(resultado);
-        } else {
-            res.status(204).send("Nenhum resultado encontrado!")
+    estatisticaModel.buscarEstatisticas().then(resultado => {
+        res.json(resultado)
+    }).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar as estatisticas", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
         }
-    }).catch(function (erro) {
-        console.log(erro);
-        console.log("Houve um erro ao buscar as estatisticas", erro.sqlMessage);
-        res.status(500).json(erro.sqlMessage);
-    });
+    );
 }
 
 module.exports = {
