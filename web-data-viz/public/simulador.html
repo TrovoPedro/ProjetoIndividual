@@ -147,14 +147,14 @@
 
                 card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas} calorias. <br>
                 Faltam ${pesoMostrar} calorias para perder 1kg. <br> Peso atual: ${pesoAtual.toFixed(2)}. <br>
-                Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
+                Faltam ${pesoAtual - metaPeso} quilos para bater sua meta.`;
             } else {
                 var pesoAG = pesoGramas / 1000;
                 pesoAtual = pesoAG - (resultadoCaloriasAndadas / 1000);
 
                 card.innerHTML += `Andando de skate por ${qtdHoras} horas, você perdeu ${resultadoCaloriasAndadas}. <br>
                 Peso atual: ${pesoAtual.toFixed(2)}. <br>
-                Faltam ${pesoMMeta.toFixed(2)} quilos para bater sua meta.`;
+                Faltam ${pesoAtual - metaPeso} quilos para bater sua meta.`;
             }
 
             fetch("/estatistica/gravarEstatistica", {
