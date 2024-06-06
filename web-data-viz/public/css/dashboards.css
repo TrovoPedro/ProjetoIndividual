@@ -31,14 +31,13 @@ header {
   display: flex;
   align-items: center;
   flex-direction: row;
-  ;
   justify-content: space-evenly;
 }
 
 ul {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 250px;
+  margin-left: 340px;
 }
 
 li {
@@ -142,7 +141,7 @@ img {
 .btnAmbos{
   width: 150px;
   height: 50px;
-  margin-top: 5px;
+  margin-top: 10px;
   border: none;
   border-radius: 25px;
   transition: 500ms;
@@ -151,6 +150,27 @@ img {
 }
 
 .btnAmbos:hover{
+  background: #000000a4;
+  cursor: pointer;
+  color: #FFF;
+}
+
+.btnCalc{
+  background: #f3cd23;
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #13083a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: 500ms;
+}
+
+.btnCalc:hover{
   background: #000000a4;
   cursor: pointer;
   color: #FFF;

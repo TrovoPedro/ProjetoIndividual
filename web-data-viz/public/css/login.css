@@ -5,10 +5,6 @@
     color: #230043;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
     background: #1A0230;
     width: 100vw;
@@ -18,19 +14,22 @@ body{
     align-items: center;
 }
 
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .voltar{
-    border-radius: 90px;
-    background: #fff;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     position: absolute;
     left: 50px;
     top: 50px;
 }
 
 .login{
-    margin-left: 30px;
-    margin-top: 25px;
     width: 95vw;
     height: 90vh;
     display: flex;
@@ -39,51 +38,28 @@ body{
     align-items: center;
 }
 
-.container{
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 40vw;
-    height: 90vh;
-    background: #721bc4b0;
-    border-radius: 10px;
-    z-index: 1;
-    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
-}
-
-.containerBaixo{
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 41.1vw;
-    height: 92vh;
-    background: #721bc4b0;
-    border-radius: 10px;
-    /* animation: shadow-animated 0.3s ease-in-out infinite normal; */
-}
-
 .campo{
-    margin-top: 15px;
-    margin-left: 9px;
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
 }
 
 .inputs{
     width: 300px;
-    height: 40px;
+    height: 20px;
     border-radius: 10px;
     border: none;
-    background: #ffffff6b;
+    background: #ffffff27;
+    color: #fff;
+    padding: 5px;
+}
 
+.inputs:focus{
+    outline: 0;
+    border: 0;
 }
 
 span{
-    margin-bottom: 15px;
     color: #fff;
 }
 
@@ -103,15 +79,14 @@ h1:hover{
 }
 
 h2{
+    margin-bottom: 20px;
     margin-left: 90px;
-    margin-bottom: 50px;
     color: #00ff88;
     font-size: 50px;
 }
 
 .botao{
-    margin-top: 85px;
-    margin-left: 10px;
+    margin-top: 50px;
     width: 300px;
     height: 50px;
     border-radius: 10px;
