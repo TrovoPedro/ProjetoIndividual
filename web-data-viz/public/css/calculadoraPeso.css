@@ -140,9 +140,10 @@ li{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     box-shadow: 0px 10px 30px rgba(3, 3, 3, 3);
     color: #fff;
+    padding-left: 10px;
 }
 
 .tituloInput1{
