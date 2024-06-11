@@ -24,7 +24,7 @@ header {
   display: flex;
   flex-direction: row;
   z-index: 1;
-  margin-top: -540px;
+  top: 0;
 }
 
 .nav-bar {
@@ -37,7 +37,7 @@ header {
 ul {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 340px;
+  margin-left: 400px;
 }
 
 li {
