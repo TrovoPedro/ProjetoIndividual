@@ -239,7 +239,7 @@ li{
 
 .sessao-rodape{
     background: rgb(250, 250, 250);
-    height: 60px;
+    height: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
